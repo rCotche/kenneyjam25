@@ -11,15 +11,16 @@ config_version=5
 [application]
 
 config/name="power"
+run/main_scene="uid://d2ttfyfi7f3n2"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [layer_names]
 
-3d_render/layer_1="player"
-3d_render/layer_2="object"
-3d_render/layer_3="environnement"
-3d_render/layer_4="ennemy"
+3d_physics/layer_1="player"
+3d_physics/layer_2="object"
+3d_physics/layer_3="environnement"
+3d_physics/layer_4="npc"
 
 [rendering]
 

@@ -29,4 +29,6 @@ shadow_enabled = true
 
 [node name="Environnement" type="Node" parent="."]
 
+[node name="PowerUps" type="Node" parent="."]
+
 [node name="Timer" type="Node" parent="."]

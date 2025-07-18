@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d2kw5mxvfhaic"]
+
+[node name="Building" type="StaticBody3D"]
+collision_layer = 4
+collision_mask = 15
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]

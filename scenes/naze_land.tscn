@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2ttfyfi7f3n2"]
+[gd_scene load_steps=4 format=3 uid="uid://d2ttfyfi7f3n2"]
 
 [ext_resource type="PackedScene" uid="uid://d21yl1eqv3tgd" path="res://scenes/level.tscn" id="1_8ulfr"]
 [ext_resource type="PackedScene" uid="uid://b5jvkrfm3dnxi" path="res://scenes/naze.tscn" id="2_syktq"]
+[ext_resource type="PackedScene" uid="uid://d07f1p4lp47vv" path="res://scenes/power_up.tscn" id="3_ilrx2"]
 
 [node name="Level" instance=ExtResource("1_8ulfr")]
 
@@ -9,3 +10,11 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Naze" parent="Environnement" index="0" instance=ExtResource("2_syktq")]
+
+[node name="PowerUp" parent="PowerUps" index="0" instance=ExtResource("3_ilrx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.715872, -5)
+
+[node name="GameTimer" type="Timer" parent="Timer" index="0"]
+wait_time = 180.0
+one_shot = true
+autostart = true

@@ -8,11 +8,11 @@ extends SpringArm3D
 @export var vertical_acceleration := 1.0
 @export var mouse_acceleration := 0.005
 
-func _process(delta: float) -> void:
-	#ps5 connected: not working
-	#ps5 connected & ds4windows lancé: not working
-	var joy_dir = Input.get_vector("pan_left", "pan_right", "pan_up", "pan_down")
-	rotate_from_vector(joy_dir * delta * Vector2(horizontal_acceleration, vertical_acceleration))
+#func _process(delta: float) -> void:
+	##ps5 connected: not working
+	##ps5 connected & ds4windows lancé: not working
+	#var joy_dir = Input.get_vector("pan_left", "pan_right", "pan_up", "pan_down")
+	#rotate_from_vector(joy_dir * delta * Vector2(horizontal_acceleration, vertical_acceleration))
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:

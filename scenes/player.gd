@@ -1,7 +1,11 @@
 extends CharacterBody3D
 
+#PLAYER
 var movement_input := Vector2.ZERO
-var speed_movement
+@export var speed_movement : float = 5.0
+
+#CAMERA
+@onready var camera = $CameraController/Camera3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,9 +16,11 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
+func _physics_process(delta: float) -> void:
+	movement(delta)
 
 func movement(delta: float) -> void:
-	movement_input = Input.get_vector("left", "right", "forward", "backward")
+	movement_input = Input.get_vector("gauche", "droite", "avancer", "reculer").rotated(-camera.global_rotation.y)
 	#1. Current movement speed du player
 	var velocity_2d := Vector2(velocity.x, velocity.z)
 	

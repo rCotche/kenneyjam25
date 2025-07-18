@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmp3ha63u1gls"]
+[gd_scene load_steps=3 format=3 uid="uid://cmp3ha63u1gls"]
 
 [ext_resource type="Script" uid="uid://c0eqjtdmdqq2h" path="res://scenes/camera_controller.gd" id="1_nsieu"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nsieu"]
+
 [node name="CameraController" type="SpringArm3D"]
+shape = SubResource("CapsuleShape3D_nsieu")
 spring_length = 5.0
 script = ExtResource("1_nsieu")
 

@@ -1,0 +1,21 @@
+Moscow
+
+M
+- movement player
+- objet to pick
+- interact objet (buildings, human)
+
+- time
+- reset game
+
+S
+- exploration
+- menu
+
+C
+- random position to pop (player/objet)
+- scoreboard(local/online)
+
+W
+- cinematic
+- tuto

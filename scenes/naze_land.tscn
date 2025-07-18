@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2ttfyfi7f3n2"]
+
+[ext_resource type="PackedScene" uid="uid://d21yl1eqv3tgd" path="res://scenes/level.tscn" id="1_8ulfr"]
+[ext_resource type="PackedScene" uid="uid://b5jvkrfm3dnxi" path="res://scenes/naze.tscn" id="2_syktq"]
+
+[node name="Level" instance=ExtResource("1_8ulfr")]
+
+[node name="Player" parent="Entities" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45887, 0)
+
+[node name="Naze" parent="Environnement" index="0" instance=ExtResource("2_syktq")]

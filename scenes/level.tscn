@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d21yl1eqv3tgd"]
+
+[ext_resource type="PackedScene" uid="uid://bhlvrsbdqid42" path="res://scenes/player.tscn" id="1_2q6dc"]
+
+[node name="Level" type="Node"]
+
+[node name="Entities" type="Node" parent="."]
+
+[node name="Player" parent="Entities" instance=ExtResource("1_2q6dc")]
+
+[node name="Environnement" type="Node" parent="."]
+
+[node name="Timer" type="Node" parent="."]

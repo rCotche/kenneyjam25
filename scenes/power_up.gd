@@ -18,15 +18,7 @@ signal powerup_near(near: bool)
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		powerup_near.emit(true)
-		apply_effect(body)
-		print("pick up")
-
-
-func _on_body_exited(body: Node3D) -> void:
-	if body.is_in_group("player"):
-		powerup_near.emit(false)
-		apply_effect(body)
-		print("nope")
+		queue_free()
 
 func apply_effect(_player) -> void:
 	# Exemple : augmenter une stat du joueur

@@ -14,15 +14,16 @@ var movement_input := Vector2.ZERO
 @onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
 # source: https://youtu.be/IOe1aGY6hXA?feature=shared
 
+#POWER UP
+var _near_count: int = 0
+var is_near_powerup: bool = false
+var the_powerup_to_interact_with: Node
+
 #CAMERA
 @onready var camera = $CameraController/Camera3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
@@ -32,6 +33,8 @@ func _physics_process(delta: float) -> void:
 	abilities()
 	#OBLIGATOIRE pour bouger
 	move_and_slide()
+
+#MOVE
 
 func movement(delta: float) -> void:
 	movement_input = Input.get_vector("gauche", "droite", "avancer", "reculer").rotated(-camera.global_rotation.y)
@@ -66,19 +69,16 @@ func jump(delta: float) -> void:
 	var gravity = jump_gravity if velocity.y > 0.0 else fall_gravity
 	velocity.y -= gravity * delta
 
+#ABILITIES
+
 func abilities() -> void:
-	interact_ability()
-	heal_ability()
 	damage_ability()
-
-func interact_ability() -> void :
-	if Input.is_action_just_pressed("pick"):
-		print("player pick")
-
-func heal_ability() -> void :
-	if Input.is_action_just_pressed("heal"):
-		print("player heal")
+	heal_ability()
 
 func damage_ability() -> void :
 	if Input.is_action_just_pressed("damage"):
 		print("player damage")
+
+func heal_ability() -> void :
+	if Input.is_action_just_pressed("heal"):
+		print("player heal")

@@ -1,0 +1,73 @@
+[gd_scene load_steps=17 format=3 uid="uid://bjy81ax3vhklm"]
+
+[ext_resource type="PackedScene" uid="uid://rhnyvpm042nx" path="res://import/kaykit/animated_character/Animations/gltf/KayKit_AnimatedCharacter_v1.2.glb" id="1_4dffk"]
+[ext_resource type="Script" uid="uid://3alv7q4m8pao" path="res://scenes/characters/kay_kit_skin.gd" id="2_yhspr"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yhspr"]
+animation = &"Shoot(1h)"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ngr37"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xai0v"]
+animation = &"Jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5dq3b"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kob3b"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7kkc3"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dn8sj"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_000k2"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2g4s1"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_02r3p"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rgptx"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_acthi"]
+states/Idle/node = SubResource("AnimationNodeAnimation_ngr37")
+states/Idle/position = Vector2(399.5, 91.5)
+states/Jump/node = SubResource("AnimationNodeAnimation_xai0v")
+states/Jump/position = Vector2(442, 185)
+states/Walk/node = SubResource("AnimationNodeAnimation_5dq3b")
+states/Walk/position = Vector2(590.5, 109.5)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_kob3b"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_7kkc3"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_dn8sj"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_000k2"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_2g4s1"), "Jump", "Walk", SubResource("AnimationNodeStateMachineTransition_02r3p"), "Walk", "Jump", SubResource("AnimationNodeStateMachineTransition_rgptx")]
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_ypqom"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_2cey8"]
+graph_offset = Vector2(-119.405, -11.4545)
+nodes/ActionAnimation/node = SubResource("AnimationNodeAnimation_yhspr")
+nodes/ActionAnimation/position = Vector2(450, 260)
+nodes/MoveStateMachine/node = SubResource("AnimationNodeStateMachine_acthi")
+nodes/MoveStateMachine/position = Vector2(400, 70)
+nodes/OneShot/node = SubResource("AnimationNodeOneShot_ypqom")
+nodes/OneShot/position = Vector2(750, 80)
+nodes/output/position = Vector2(1120, 170)
+node_connections = [&"OneShot", 0, &"MoveStateMachine", &"OneShot", 1, &"ActionAnimation", &"output", 0, &"OneShot"]
+
+[node name="KayKitSkin" instance=ExtResource("1_4dffk")]
+script = ExtResource("2_yhspr")
+
+[node name="Skeleton3D" parent="KayKit Animated Character" index="0"]
+bones/0/rotation = Quaternion(-0.0162783, 0, 7.72294e-19, 0.999867)
+bones/1/rotation = Quaternion(0.0681287, 0, -9.89177e-18, 0.997677)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/rotation = Quaternion(-0.679498, -0.198599, 0.677654, -0.199062)
+bones/4/rotation = Quaternion(-0.697272, 0.303316, 0.645808, 0.0688748)
+bones/5/position = Vector3(-2.44408e-15, 0.550922, 3.41435e-08)
+bones/5/rotation = Quaternion(0.300506, -0.376591, 0.679877, 0.55285)
+bones/5/scale = Vector3(1, 1, 1)
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeBlendTree_2cey8")
+anim_player = NodePath("../AnimationPlayer")
+parameters/OneShot/active = false
+parameters/OneShot/internal_active = false
+parameters/OneShot/request = 0

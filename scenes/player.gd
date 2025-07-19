@@ -4,6 +4,7 @@ extends CharacterBody3D
 var movement_input := Vector2.ZERO
 @export var speed_movement : float = 5.0
 @export var max_speed_movement : float = 10.0
+@onready var skin = $KayKitSkin
 #jump
 @export var jump_height : float = 2.25
 @export var jump_time_to_peak : float = 0.4
@@ -46,7 +47,13 @@ func movement(delta: float) -> void:
 		#2.3 updating velocity to get a new movement speed
 		velocity.x = velocity_2d.x
 		velocity.z = velocity_2d.y
-		print(movement_input)
+		skin.set_move_state('Walk')
+		
+		#rotate kaykit model
+		#movement_input.angle() est en radian
+		var target_angle = -movement_input.angle() + PI/2
+		#rotate_toward (rotation de départ, rotation que l'on souhaite, temps)
+		skin.rotation.y = rotate_toward(skin.rotation.y, target_angle, 7.0 * delta)
 	else :
 		#permet de ralentir le perso lorsqu'il y a pas d'input
 		#3.1 get our current speed and change it to zero
@@ -56,10 +63,12 @@ func movement(delta: float) -> void:
 		#3.2 updating velocity to get a new movement speed
 		velocity.x = velocity_2d.x
 		velocity.z = velocity_2d.y
+		skin.set_move_state('Idle')
 
 func jump(delta: float) -> void:
 	if is_on_floor():
 		if Input.is_action_just_pressed("saut"):
+			skin.set_move_state('Jump')
 			velocity.y = -jump_velocity
 	var gravity = jump_gravity if velocity.y > 0.0 else fall_gravity
 	velocity.y -= gravity * delta

@@ -1,0 +1,69 @@
+[gd_scene load_steps=16 format=3 uid="uid://04x0iqaa2ni2"]
+
+[ext_resource type="PackedScene" uid="uid://rhnyvpm042nx" path="res://import/kaykit/animated_character/Animations/gltf/KayKit_AnimatedCharacter_v1.2.glb" id="2_ergyn"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jc1dg"]
+animation = &"Shoot(1h)"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_747kw"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ergyn"]
+animation = &"Jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_npqju"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jc1dg"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uutlo"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6w0tk"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d28ia"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gyshg"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_id284"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b8ayj"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_5dsg0"]
+states/Idle/node = SubResource("AnimationNodeAnimation_747kw")
+states/Idle/position = Vector2(364.5, 99.5)
+states/Jump/node = SubResource("AnimationNodeAnimation_ergyn")
+states/Jump/position = Vector2(439.5, 179.5)
+states/Walk/node = SubResource("AnimationNodeAnimation_npqju")
+states/Walk/position = Vector2(618.5, 98.5)
+transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_jc1dg"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_uutlo"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_6w0tk"), "Jump", "Walk", SubResource("AnimationNodeStateMachineTransition_d28ia"), "Walk", "Jump", SubResource("AnimationNodeStateMachineTransition_gyshg"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_id284"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_b8ayj")]
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_uutlo"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_iny1e"]
+graph_offset = Vector2(-205.089, -22.1057)
+nodes/ActionAnimation/node = SubResource("AnimationNodeAnimation_jc1dg")
+nodes/ActionAnimation/position = Vector2(0, 230)
+nodes/MoveStateMachine/node = SubResource("AnimationNodeStateMachine_5dsg0")
+nodes/MoveStateMachine/position = Vector2(-40, 40)
+nodes/OneShot/node = SubResource("AnimationNodeOneShot_uutlo")
+nodes/OneShot/position = Vector2(440, 50)
+nodes/output/position = Vector2(780, 120)
+node_connections = [&"OneShot", 0, &"MoveStateMachine", &"OneShot", 1, &"ActionAnimation", &"output", 0, &"OneShot"]
+
+[node name="KayKitPerso" type="Node3D"]
+
+[node name="KayKit Animated Character2" parent="." instance=ExtResource("2_ergyn")]
+
+[node name="Skeleton3D" parent="KayKit Animated Character2/KayKit Animated Character" index="0"]
+bones/2/rotation = Quaternion(-0.685863, -0.172023, 0.685863, -0.172022)
+bones/4/rotation = Quaternion(-0.685863, 0.172023, 0.685863, 0.172023)
+
+[node name="AnimationTree" type="AnimationTree" parent="KayKit Animated Character2"]
+tree_root = SubResource("AnimationNodeBlendTree_iny1e")
+anim_player = NodePath("../AnimationPlayer")
+parameters/OneShot/active = false
+parameters/OneShot/internal_active = false
+parameters/OneShot/request = 0
+
+[editable path="KayKit Animated Character2"]

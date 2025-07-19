@@ -14,11 +14,6 @@ var movement_input := Vector2.ZERO
 @onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
 # source: https://youtu.be/IOe1aGY6hXA?feature=shared
 
-#POWER UP
-var _near_count: int = 0
-var is_near_powerup: bool = false
-var the_powerup_to_interact_with: Node
-
 #CAMERA
 @onready var camera = $CameraController/Camera3D
 

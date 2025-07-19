@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6obuj3iw884f"]
+
+[ext_resource type="PackedScene" uid="uid://fj482o8jd0vu" path="res://scenes/roads/road_tiles.tscn" id="1_flmnh"]
+
+[node name="RoadTilesTri" instance=ExtResource("1_flmnh")]

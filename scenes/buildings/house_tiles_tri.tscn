@@ -26,31 +26,43 @@ data = PackedVector3Array(2.304, 7.2, 5.8045, 2.304, 4.05, 5.8045, -1.296, 4.05,
 visible = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="building-type-a2/building-type-a" index="0"]
+collision_layer = 4
+collision_mask = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="building-type-a2/building-type-a/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_gcoan")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="building-type-b2/building-type-b" index="0"]
+collision_layer = 4
+collision_mask = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="building-type-b2/building-type-b/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_ng6rg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="building-type-c2/building-type-c" index="0"]
+collision_layer = 4
+collision_mask = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="building-type-c2/building-type-c/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_hwxff")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="building-type-d2/building-type-d" index="0"]
+collision_layer = 4
+collision_mask = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="building-type-d2/building-type-d/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_d3ll1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="building-type-e2/building-type-e" index="0"]
+collision_layer = 4
+collision_mask = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="building-type-e2/building-type-e/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_b505f")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="building-type-f2/building-type-f" index="0"]
+collision_layer = 4
+collision_mask = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="building-type-f2/building-type-f/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_p07wi")

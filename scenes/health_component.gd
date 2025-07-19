@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var health: float
+@export var health : float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

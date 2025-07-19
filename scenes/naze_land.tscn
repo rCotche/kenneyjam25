@@ -1,15 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2ttfyfi7f3n2"]
+[gd_scene load_steps=6 format=3 uid="uid://d2ttfyfi7f3n2"]
 
 [ext_resource type="PackedScene" uid="uid://d21yl1eqv3tgd" path="res://scenes/level.tscn" id="1_8ulfr"]
 [ext_resource type="PackedScene" uid="uid://b5jvkrfm3dnxi" path="res://scenes/naze.tscn" id="2_syktq"]
+[ext_resource type="PackedScene" uid="uid://cli78oypt6yw7" path="res://scenes/proto_building.tscn" id="3_du6wo"]
 [ext_resource type="PackedScene" uid="uid://d07f1p4lp47vv" path="res://scenes/power_up.tscn" id="3_ilrx2"]
+[ext_resource type="PackedScene" uid="uid://cxxnbq2u4t8lm" path="res://scenes/health_component.tscn" id="4_8pdl5"]
 
-[node name="Level" instance=ExtResource("1_8ulfr")]
+[node name="NazeLand" instance=ExtResource("1_8ulfr")]
 
 [node name="Player" parent="Entities" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Naze" parent="Environnement" index="0" instance=ExtResource("2_syktq")]
+
+[node name="ProtoBuilding" parent="Environnement" index="1" instance=ExtResource("3_du6wo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1968, 0.5, 0)
+
+[node name="HealthComponent" parent="Environnement/ProtoBuilding" index="2" instance=ExtResource("4_8pdl5")]
 
 [node name="PowerUp" parent="PowerUps" index="0" instance=ExtResource("3_ilrx2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.715872, -5)

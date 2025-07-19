@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d21yl1eqv3tgd"]
+[gd_scene load_steps=7 format=3 uid="uid://d21yl1eqv3tgd"]
 
 [ext_resource type="PackedScene" uid="uid://bhlvrsbdqid42" path="res://scenes/player.tscn" id="1_2q6dc"]
+[ext_resource type="Script" uid="uid://csurb5cwq1r1e" path="res://scenes/level.gd" id="1_w8frs"]
+[ext_resource type="PackedScene" uid="uid://d3cwql0l13lo5" path="res://scenes/ui.tscn" id="2_w7c3h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2q6dc"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -15,6 +17,7 @@ sky = SubResource("Sky_w7c3h")
 tonemap_mode = 2
 
 [node name="Level" type="Node"]
+script = ExtResource("1_w8frs")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_w8frs")
@@ -32,3 +35,5 @@ shadow_enabled = true
 [node name="PowerUps" type="Node" parent="."]
 
 [node name="Timer" type="Node" parent="."]
+
+[node name="UI" parent="." instance=ExtResource("2_w7c3h")]

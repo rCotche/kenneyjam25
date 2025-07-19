@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-#PLAYER
+#PLAYER MOVE
 var movement_input := Vector2.ZERO
 @export var speed_movement : float = 5.0
 @export var max_speed_movement : float = 10.0
@@ -11,7 +11,6 @@ var movement_input := Vector2.ZERO
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -48,3 +47,12 @@ func movement(delta: float) -> void:
 		#3.2 updating velocity to get a new movement speed
 		velocity.x = velocity_2d.x
 		velocity.z = velocity_2d.y
+
+func interact_ability() -> void :
+	pass
+
+func heal_ability() -> void :
+	pass
+
+func damage_ability() -> void :
+	pass

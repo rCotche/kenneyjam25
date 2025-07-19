@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cli78oypt6yw7"]
+
+[ext_resource type="PackedScene" uid="uid://d2kw5mxvfhaic" path="res://scenes/building.tscn" id="1_ms78l"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yv4pc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfanw"]
+
+[node name="ProtoBuilding" instance=ExtResource("1_ms78l")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = SubResource("BoxMesh_yv4pc")
+
+[node name="CollisionShape3D" parent="." index="1"]
+shape = SubResource("BoxShape3D_lfanw")
+debug_fill = false

@@ -1,10 +1,14 @@
 extends Area3D
 
+#POWER UP DESCRIPTION
 var rotation_speed: int = 5
 #power up type
 var available_options := ['heal', 'damage']
 #randomize power up
 var type = available_options[randi()%len(available_options)]
+
+#
+signal powerup_near(near: bool)
 
 #func _process(delta: float) -> void:
 	##to fix
@@ -13,12 +17,14 @@ var type = available_options[randi()%len(available_options)]
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
+		powerup_near.emit(true)
 		apply_effect(body)
 		print("pick up")
 
 
 func _on_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
+		powerup_near.emit(false)
 		apply_effect(body)
 		print("nope")
 

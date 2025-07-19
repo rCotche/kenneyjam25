@@ -1,6 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5jvkrfm3dnxi"]
-
-[ext_resource type="PackedScene" uid="uid://d33hgqxe2m2cf" path="res://scenes/buildings/moi_building_type_a.tscn" id="1_7sg8a"]
+[gd_scene load_steps=3 format=3 uid="uid://b5jvkrfm3dnxi"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_y84yg"]
 size = Vector2(100, 100)
@@ -17,6 +15,3 @@ mesh = SubResource("PlaneMesh_y84yg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("WorldBoundaryShape3D_7sg8a")
-
-[node name="moi_building-type-a" parent="." instance=ExtResource("1_7sg8a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)

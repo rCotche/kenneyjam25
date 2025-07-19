@@ -4,6 +4,15 @@ extends CharacterBody3D
 var movement_input := Vector2.ZERO
 @export var speed_movement : float = 5.0
 @export var max_speed_movement : float = 10.0
+#jump
+@export var jump_height : float = 2.25
+@export var jump_time_to_peak : float = 0.4
+@export var jump_time_to_descent : float = 0.3
+
+@onready var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
+@onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
+@onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
+# source: https://youtu.be/IOe1aGY6hXA?feature=shared
 
 #CAMERA
 @onready var camera = $CameraController/Camera3D
@@ -17,8 +26,10 @@ func _process(_delta: float) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	#
+	#ACTION
 	movement(delta)
+	jump(delta)
+	abilities()
 	#OBLIGATOIRE pour bouger
 	move_and_slide()
 
@@ -48,11 +59,26 @@ func movement(delta: float) -> void:
 		velocity.x = velocity_2d.x
 		velocity.z = velocity_2d.y
 
+func jump(delta: float) -> void:
+	if is_on_floor():
+		if Input.is_action_just_pressed("saut"):
+			velocity.y = -jump_velocity
+	var gravity = jump_gravity if velocity.y > 0.0 else fall_gravity
+	velocity.y -= gravity * delta
+
+func abilities() -> void:
+	interact_ability()
+	heal_ability()
+	damage_ability()
+
 func interact_ability() -> void :
-	pass
+	if Input.is_action_just_pressed("pick"):
+		print("player pick")
 
 func heal_ability() -> void :
-	pass
+	if Input.is_action_just_pressed("heal"):
+		print("player heal")
 
 func damage_ability() -> void :
-	pass
+	if Input.is_action_just_pressed("damage"):
+		print("player damage")

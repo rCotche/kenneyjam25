@@ -1,0 +1,109 @@
+[gd_scene load_steps=22 format=3 uid="uid://kukihjvnrwpn"]
+
+[ext_resource type="PackedScene" uid="uid://b7kbxukaql2l5" path="res://import/kenney/suburban/GLB format/building-type-a.glb" id="1_jtkai"]
+[ext_resource type="PackedScene" uid="uid://bwjefm6t1jcyp" path="res://import/kenney/suburban/GLB format/building-type-b.glb" id="2_dvmpd"]
+[ext_resource type="PackedScene" uid="uid://d24vyi0kxikt3" path="res://import/kenney/suburban/GLB format/building-type-c.glb" id="3_v1lgg"]
+[ext_resource type="PackedScene" uid="uid://yxdlvy3kx0fh" path="res://import/kenney/suburban/GLB format/building-type-d.glb" id="4_y8yp8"]
+[ext_resource type="PackedScene" uid="uid://d2m3pu7b4lti0" path="res://import/kenney/suburban/GLB format/building-type-e.glb" id="5_xe7oa"]
+[ext_resource type="PackedScene" uid="uid://dg7xn5l1t1owu" path="res://import/kenney/suburban/GLB format/building-type-f.glb" id="6_xqvwo"]
+[ext_resource type="PackedScene" uid="uid://c5h5atittukkx" path="res://import/kenney/suburban/GLB format/building-type-g.glb" id="7_rhoxp"]
+[ext_resource type="PackedScene" uid="uid://dkpad6yv1i0jb" path="res://import/kenney/suburban/GLB format/building-type-h.glb" id="8_tqhed"]
+[ext_resource type="PackedScene" uid="uid://k6coimt0nxdi" path="res://import/kenney/suburban/GLB format/building-type-i.glb" id="9_1tcs0"]
+[ext_resource type="PackedScene" uid="uid://bghf23r7rwi3c" path="res://import/kenney/suburban/GLB format/building-type-j.glb" id="10_xpyr8"]
+[ext_resource type="PackedScene" uid="uid://yn0sl6aybkkh" path="res://import/kenney/suburban/GLB format/building-type-k.glb" id="11_nknc6"]
+[ext_resource type="PackedScene" uid="uid://bxw2cfiy71nq" path="res://import/kenney/suburban/GLB format/building-type-l.glb" id="12_2k82t"]
+[ext_resource type="PackedScene" uid="uid://co5brpj6c7bcp" path="res://import/kenney/suburban/GLB format/building-type-m.glb" id="13_ro5b6"]
+[ext_resource type="PackedScene" uid="uid://dh7kdpimjxgkv" path="res://import/kenney/suburban/GLB format/building-type-n.glb" id="14_rflm4"]
+[ext_resource type="PackedScene" uid="uid://3xrogdie7ag8" path="res://import/kenney/suburban/GLB format/building-type-o.glb" id="15_4v557"]
+[ext_resource type="PackedScene" uid="uid://diq3uncfppxeh" path="res://import/kenney/suburban/GLB format/building-type-p.glb" id="16_vanrc"]
+[ext_resource type="PackedScene" uid="uid://fnpl2lagxqsm" path="res://import/kenney/suburban/GLB format/building-type-q.glb" id="17_0mfsb"]
+[ext_resource type="PackedScene" uid="uid://b5e0mguj2plfv" path="res://import/kenney/suburban/GLB format/building-type-r.glb" id="18_1ocg0"]
+[ext_resource type="PackedScene" uid="uid://bj0mogmr8bisy" path="res://import/kenney/suburban/GLB format/building-type-s.glb" id="19_v22fv"]
+[ext_resource type="PackedScene" uid="uid://cqarrmg53s0ic" path="res://import/kenney/suburban/GLB format/building-type-t.glb" id="20_ek40p"]
+[ext_resource type="PackedScene" uid="uid://b6fbgkhrd1q5m" path="res://import/kenney/suburban/GLB format/building-type-u.glb" id="21_f7swv"]
+
+[node name="HouseTiles" type="Node3D"]
+
+[node name="building-type-a2" parent="." instance=ExtResource("1_jtkai")]
+
+[node name="building-type-b2" parent="." instance=ExtResource("2_dvmpd")]
+visible = false
+
+[node name="building-type-c2" parent="." instance=ExtResource("3_v1lgg")]
+visible = false
+
+[node name="building-type-d2" parent="." instance=ExtResource("4_y8yp8")]
+visible = false
+
+[node name="building-type-e2" parent="." instance=ExtResource("5_xe7oa")]
+visible = false
+
+[node name="building-type-f2" parent="." instance=ExtResource("6_xqvwo")]
+visible = false
+
+[node name="building-type-g2" parent="." instance=ExtResource("7_rhoxp")]
+visible = false
+
+[node name="building-type-h2" parent="." instance=ExtResource("8_tqhed")]
+visible = false
+
+[node name="building-type-i2" parent="." instance=ExtResource("9_1tcs0")]
+visible = false
+
+[node name="building-type-j2" parent="." instance=ExtResource("10_xpyr8")]
+visible = false
+
+[node name="building-type-k2" parent="." instance=ExtResource("11_nknc6")]
+visible = false
+
+[node name="building-type-l2" parent="." instance=ExtResource("12_2k82t")]
+visible = false
+
+[node name="building-type-m2" parent="." instance=ExtResource("13_ro5b6")]
+visible = false
+
+[node name="building-type-n2" parent="." instance=ExtResource("14_rflm4")]
+visible = false
+
+[node name="building-type-o2" parent="." instance=ExtResource("15_4v557")]
+visible = false
+
+[node name="building-type-p2" parent="." instance=ExtResource("16_vanrc")]
+visible = false
+
+[node name="building-type-q2" parent="." instance=ExtResource("17_0mfsb")]
+visible = false
+
+[node name="building-type-r2" parent="." instance=ExtResource("18_1ocg0")]
+visible = false
+
+[node name="building-type-s2" parent="." instance=ExtResource("19_v22fv")]
+visible = false
+
+[node name="building-type-t2" parent="." instance=ExtResource("20_ek40p")]
+visible = false
+
+[node name="building-type-u2" parent="." instance=ExtResource("21_f7swv")]
+visible = false
+
+[editable path="building-type-a2"]
+[editable path="building-type-b2"]
+[editable path="building-type-c2"]
+[editable path="building-type-d2"]
+[editable path="building-type-e2"]
+[editable path="building-type-f2"]
+[editable path="building-type-g2"]
+[editable path="building-type-h2"]
+[editable path="building-type-i2"]
+[editable path="building-type-j2"]
+[editable path="building-type-k2"]
+[editable path="building-type-l2"]
+[editable path="building-type-m2"]
+[editable path="building-type-n2"]
+[editable path="building-type-o2"]
+[editable path="building-type-p2"]
+[editable path="building-type-q2"]
+[editable path="building-type-r2"]
+[editable path="building-type-s2"]
+[editable path="building-type-t2"]
+[editable path="building-type-u2"]

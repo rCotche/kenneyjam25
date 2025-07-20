@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhlvrsbdqid42"]
+[gd_scene load_steps=6 format=3 uid="uid://bhlvrsbdqid42"]
 
 [ext_resource type="Script" uid="uid://jnrnkfpfrmer" path="res://scenes/player.gd" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://cmp3ha63u1gls" path="res://scenes/camera_controller.tscn" id="2_g2els"]
 [ext_resource type="PackedScene" uid="uid://bjy81ax3vhklm" path="res://scenes/characters/kay_kit_skin.tscn" id="2_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://cjef2vew4twon" path="res://audio/jump/cartoon-jump-6462.mp3" id="4_dqkch"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vyb7"]
 height = 1.90797
@@ -19,3 +20,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0.042)
 shape = SubResource("CapsuleShape3D_3vyb7")
 
 [node name="CameraController" parent="." instance=ExtResource("2_g2els")]
+
+[node name="JumpSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_dqkch")
+bus = &"Jump"

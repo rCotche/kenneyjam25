@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://db6qnulhwcvwb"]
+
+[ext_resource type="Script" uid="uid://b4vtt4564mxjw" path="res://scenes/menu/main.gd" id="1_omghv"]
+[ext_resource type="FontFile" uid="uid://sql240c32q7k" path="res://font/Chango-Regular.ttf" id="1_rrmte"]
+[ext_resource type="PackedScene" uid="uid://d2ttfyfi7f3n2" path="res://scenes/naze_land.tscn" id="2_ynvfx"]
+[ext_resource type="PackedScene" uid="uid://c61qs31qxmldr" path="res://scenes/credit.tscn" id="3_box2j"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_omghv")
+game_scene = ExtResource("2_ynvfx")
+credit_scene = ExtResource("3_box2j")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_rrmte")
+text = "Play"
+
+[node name="Credit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_rrmte")
+text = "Credits"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_rrmte")
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Credit" to="." method="_on_credit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

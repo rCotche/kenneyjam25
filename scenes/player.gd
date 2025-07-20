@@ -69,6 +69,7 @@ func jump(delta: float) -> void:
 	if is_on_floor():
 		if Input.is_action_just_pressed("saut"):
 			skin.set_move_state('Jump')
+			$JumpSound.play()
 			velocity.y = -jump_velocity
 	var gravity = jump_gravity if velocity.y > 0.0 else fall_gravity
 	velocity.y -= gravity * delta

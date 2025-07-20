@@ -120,10 +120,28 @@ script = ExtResource("15_cqmvn")
 shape = SubResource("Resource_g8bsm")
 
 [node name="PowerUp" parent="PowerUps" index="0" instance=ExtResource("3_ilrx2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.715872, -5)
-points = 10
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12675, 0.746041, -4.10836)
+
+[node name="PowerUp6" parent="PowerUps" index="1" instance=ExtResource("3_ilrx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.7245, 0.746041, -4.10836)
+
+[node name="PowerUp2" parent="PowerUps" index="2" instance=ExtResource("3_ilrx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7215, 1.31559, 12.7935)
+
+[node name="PowerUp3" parent="PowerUps" index="3" instance=ExtResource("3_ilrx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.84677, 1.76399, -10.0873)
+
+[node name="PowerUp4" parent="PowerUps" index="4" instance=ExtResource("3_ilrx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.52903, 6.61175, 5.12587)
+points = 20
+
+[node name="PowerUp5" parent="PowerUps" index="5" instance=ExtResource("3_ilrx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.52903, 9.5715, 12.8534)
+points = 25
 
 [node name="GameTimer" type="Timer" parent="Timer" index="0"]
 wait_time = 180.0
 one_shot = true
 autostart = true
+
+[connection signal="timeout" from="Timer/GameTimer" to="." method="_on_game_timer_timeout"]

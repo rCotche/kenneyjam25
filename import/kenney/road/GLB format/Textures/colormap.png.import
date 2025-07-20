@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7utu5fi18f4b"
 path.s3tc="res://.godot/imported/colormap.png-86cc0bcb17988869616820296320f1eb.s3tc.ctex"
+path.etc2="res://.godot/imported/colormap.png-86cc0bcb17988869616820296320f1eb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://import/kenney/road/GLB format/Textures/colormap.png"
-dest_files=["res://.godot/imported/colormap.png-86cc0bcb17988869616820296320f1eb.s3tc.ctex"]
+dest_files=["res://.godot/imported/colormap.png-86cc0bcb17988869616820296320f1eb.s3tc.ctex", "res://.godot/imported/colormap.png-86cc0bcb17988869616820296320f1eb.etc2.ctex"]
 
 [params]
 

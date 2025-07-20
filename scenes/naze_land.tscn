@@ -75,7 +75,7 @@ radius = 199.126
 [node name="NazeLand" instance=ExtResource("1_8ulfr")]
 
 [node name="DirectionalLight3D" parent="." index="1"]
-light_color = Color(0.719617, 0.592927, 0.879741, 1)
+light_color = Color(0.739351, 0.59, 0.926722, 1)
 
 [node name="Player" parent="Entities" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00398266, -0.352747)
@@ -121,6 +121,7 @@ shape = SubResource("Resource_g8bsm")
 
 [node name="PowerUp" parent="PowerUps" index="0" instance=ExtResource("3_ilrx2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.715872, -5)
+points = 10
 
 [node name="GameTimer" type="Timer" parent="Timer" index="0"]
 wait_time = 180.0

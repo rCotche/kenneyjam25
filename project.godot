@@ -15,6 +15,10 @@ run/main_scene="uid://d2ttfyfi7f3n2"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*res://globals.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/proton_scatter/plugin.cfg")
@@ -77,3 +81,4 @@ pick={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

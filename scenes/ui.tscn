@@ -1,8 +1,12 @@
-[gd_scene format=3 uid="uid://d3cwql0l13lo5"]
+[gd_scene load_steps=2 format=3 uid="uid://d3cwql0l13lo5"]
+
+[ext_resource type="Script" uid="uid://dh7g0kl3jdhcy" path="res://scenes/ui.gd" id="1_nt7q6"]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_nt7q6")
 
 [node name="PickupControl" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,3 +29,23 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Press P to pick"
+
+[node name="ScoreMarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScoreMarginContainer"]
+layout_mode = 2
+
+[node name="ConstantText" type="Label" parent="ScoreMarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Score : "
+
+[node name="ScoreText" type="Label" parent="ScoreMarginContainer/HBoxContainer"]
+layout_mode = 2

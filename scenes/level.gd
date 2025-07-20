@@ -20,7 +20,3 @@ func _ready() -> void:
 #
 #func on_powerup_powerupnear(near: bool) -> void:
 	#pickup_label.visible = near
-
-
-func _on_game_timer_timeout() -> void:
-	get_tree().reload_current_scene()

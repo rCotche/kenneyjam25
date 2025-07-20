@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=3 uid="uid://bgjl78314qqq8"]
+
+[ext_resource type="Shader" uid="uid://dmwaehqs5bqkx" path="res://scenes/menu/real_menu.gdshader" id="1_1d6p0"]
+[ext_resource type="Script" uid="uid://bi3055b1mkqwl" path="res://scenes/menu/real_menu.gd" id="1_3xi8a"]
+[ext_resource type="PackedScene" uid="uid://d2ttfyfi7f3n2" path="res://scenes/naze_land.tscn" id="2_2ubae"]
+[ext_resource type="Texture2D" uid="uid://jwyifxjox3sw" path="res://import/kenney/ui/PNG/kenney-jam-splash-dark.png" id="2_5p8pb"]
+[ext_resource type="FontFile" uid="uid://sql240c32q7k" path="res://font/Chango-Regular.ttf" id="3_5p8pb"]
+[ext_resource type="PackedScene" uid="uid://c61qs31qxmldr" path="res://scenes/credit.tscn" id="3_p2e67"]
+[ext_resource type="AudioStream" uid="uid://cuo7387tmrp0f" path="res://audio/bubble/sci-fi-bubble-pop-89059.mp3" id="7_p2e67"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3xi8a"]
+shader = ExtResource("1_1d6p0")
+shader_parameter/radius = 4
+shader_parameter/texel_scale = 1.0
+
+[node name="RealMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3xi8a")
+game_scene = ExtResource("2_2ubae")
+credit_scene = ExtResource("3_p2e67")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_3xi8a")
+layout_mode = 0
+offset_right = 1203.0
+offset_bottom = 1797.0
+scale = Vector2(0.960006, 0.359999)
+texture = ExtResource("2_5p8pb")
+expand_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="PlayBtn" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5p8pb")
+theme_override_font_sizes/font_size = 48
+text = "Play"
+
+[node name="QuitBtn" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5p8pb")
+theme_override_font_sizes/font_size = 48
+text = "Quit"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="Credit" type="Button" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5p8pb")
+theme_override_font_sizes/font_size = 48
+text = "Credit"
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_p2e67")
+bus = &"BubblePop"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PlayBtn" to="." method="_on_play_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/Credit" to="." method="_on_credit_pressed"]

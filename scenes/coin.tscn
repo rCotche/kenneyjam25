@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpamoy8c0ecq2"]
+
+[ext_resource type="PackedScene" uid="uid://7ua6chfbhbep" path="res://import/kenney/prototype_kit/GLB format/coin.glb" id="1_rwqht"]
+
+[node name="coin" instance=ExtResource("1_rwqht")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
